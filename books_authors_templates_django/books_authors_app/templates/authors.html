@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authors</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="authorForm">
+            <form action="/addAuthor" method="POST">
+                {% csrf_token %}
+                <label>First Name: </label>
+                <input type="text" name="authorFirstName" placeholder="Author First Name" class="textBoxes"><br>
+                <label>Last Name: </label>
+                <input type="text" name="authorLastName" placeholder="Author Last Name" class="textBoxes"><br>
+                <div class="descriptionDiv">
+                    <label>Notes: </label>
+                    <textarea name="authorNote" cols="50" rows="10" placeholder="Enter Author Notes"
+                        class="textBoxes"></textarea><br>
+                </div>
+                <div class="container">
+                    <button type="submit" class="btn">Add</button>
+                    <a href="/" class="btn">Go to Books!</a>
+                </div>
+            </form>
+        </div>
+        <div class="authorTable">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Action</th>
+                </tr>
+                {% for author in AUTHORS %}
+                <tr>
+                    <td>{{author.id}}</td>
+                    <td>{{author.first_name}} {{author.last_name}}</td>
+                    <td><a href="/authorDetails/{{author.id}}" class="anchor">View</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

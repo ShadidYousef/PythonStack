@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Gold</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="top">
+        <h1 id="yourGold">Your Gold: {{ request.session.gold }}</h1>
+        <a href="/reset" class="btn">Reset Game</a>
+    </div>
+    <div class="container">
+        <div class="box">
+            <h2>Farm</h2>
+            <p>earns 10-20 gold</p><br>
+            <a href="/farm" class="btn">Find Gold</a>
+        </div>
+        <div class="box">
+            <h2>Cave</h2>
+            <p>earns 10-20 gold</p><br>
+            <a href="/cave" class="btn">Find Gold</a>
+        </div>
+        <div class="box">
+            <h2>House</h2>
+            <p>earns 10-20 gold</p><br>
+            <a href="/house" class="btn">Find Gold</a>
+        </div>
+        <div class="box">
+            <h2>Quest</h2>
+            <p>earns/takes 0-50 gold</p><br>
+            <a href="/quest " class="btn">Find Gold</a>
+        </div>
+    </div>
+    <div class="footer">
+        <textarea name="quest_log" id="quest_log" cols="100" rows="10"></textarea>
+    </div>
+</body>
+</html>

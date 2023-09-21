@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  pad: 0;
+  font-family: sans-serif;
+}
+.container,
+.container_submit {
+  width: 400px;
+  padding: 30px;
+  border: 2px solid black;
+  line-height: 25px;
+  margin: 20px;
+}
+.container_submit > p {
+  display: flex;
+  justify-content: space-between;
+}
+.name,
+.dojo_location,
+.favorite_language {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
+}
+#submit_header {
+  text-decoration: underline;
+  font-style: bold;
+}
+#submit_btn {
+  background-color: #76a5af;
+  color: white;
+  box-shadow: 3px 3px black;
+  padding: 5px 8px;
+  border-radius: 5px;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>View Count</title>
+</head>
+<body>
+    
+    <form action="/action" method="POST">
+        <div class="container">
+            <h1>Counter</h1>
+            <p name="counter">{{ counter }} times</p>
+            <div class="buttons">
+                <div>
+                    <input type="submit" value="Reset Visit Count" name="reset_button" id="reset_button">
+                    <input type="submit" value="Increment count +2" name="increment_button" id="increment_button">
+                </div>
+                <div class="inputBox">
+                    <input type="text" placeholder="What Number To Add?" name="user_input" id="inputBox">
+                    <input type="submit" value="Add it!" name="user_add_button" id="user_add_button">
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+</body>
+</html>

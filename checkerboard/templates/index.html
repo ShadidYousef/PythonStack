@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkerboard</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    {% for i in range(0,length): %}
+        <div class="container">
+        {% if i%2==0: %}
+            {% for j in range(width): %}
+                <div class="redBox"></div>
+                <div class="blackBox"></div>
+                {% endfor %}
+        {% endif %}
+        {% if i%2==1: %}
+            {% for j in range(width): %}
+                <div class="blackBox"></div>
+                <div class="redBox"></div>
+            {% endfor %}
+        {% endif %}
+        </div>
+    {% endfor %}
+
+    <!-- <script type="text/javascript" src="{{url_for('static', filename='script.js')}}"></script> -->
+</body>
+</html>

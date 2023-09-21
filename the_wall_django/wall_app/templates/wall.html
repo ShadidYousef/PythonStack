@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wall</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'wall_style/style.css' %}" />
+</head>
+
+<body>
+    <div class="navbar">
+        <h1>CodingDojo Wall</h1>
+        <div class="user_and_logout">
+            <p>Welcome, {{user.first_name}}</p>
+            <a href="/logout" class="anchor">Logout</a>
+        </div>
+    </div><br>
+
+    <div class="container">
+
+        <form action="/makepost" method="POST">
+            {% csrf_token %}
+            <label for="user_post" id="write_post">Write a Post</label><br>
+            <textarea name="user_post" class="textBoxes" cols="50" rows="10"></textarea><br>
+            <button type="submit" id="make_post">Post!</button>
+        </form>
+
+        <div class="posts">
+            {% for post in posts %}
+                <div class="posts_div">
+                    <div>
+                        <h3> <b>{{post.user.first_name}} {{post.user.last_name}}</b> - {{post.created_at}} </h3>
+                        <p> {{post.post}} </p>
+                    </div>
+                    <form action="/delete_post" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="delete_post" value="{{post.id}}">
+                        <input type="submit" class="anchor" value="delete post">
+                    </form>
+                </div><br>
+
+                <div class="comments_div">
+                    {% for comment in post.comments.all %}
+                    <h4> <b>{{comment.user.first_name}} {{comment.user.last_name}}</b> - {{post.created_at}} </h4>
+                    <p>{{comment.comment}}</p><br>
+                    {% endfor %}
+                </div>
+
+                <form action="/makecomment/{{post.id}}" method="POST">
+                    {% csrf_token %}
+                    <label for="user_comment">comment</label><br>
+                    <textarea name="user_comment" class="textBoxes" placeholder="Leave {{post.user.first_name}} a comment" cols="35" rows="3"></textarea><br>
+                    <button type="submit" id="make_comment">Comment</button>
+                </form><br>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+
+</html>

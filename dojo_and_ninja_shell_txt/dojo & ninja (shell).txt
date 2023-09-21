@@ -1,0 +1,49 @@
+//1 run the shell and import models
+py manage.py shell
+from dojo_ninja_app.models import Dojo, Ninja
+
+//2 
+Dojo.objects.create(name = "Black-Dojo", city = "Kyoto", state = "Kyoto-Town")
+Dojo.objects.create(name = "Green-Dojo", city = "Igusa", state = "Bones-Town")
+Dojo.objects.create(name = "Red-Dojo", city = "Nakano", state = "Madhouse-Town")
+
+//3
+ Dojo.objects.all().delete()
+
+//4 
+Dojo.objects.create(name = "Black-Dojo", city = "Kyoto", state = "Kyoto-Town")
+Dojo.objects.create(name = "Green-Dojo", city = "Igusa", state = "Bones-Town")
+Dojo.objects.create(name = "Red-Dojo", city = "Nakano", state = "Madhouse-Town")
+
+//5
+Ninja.objects.create(dojo = Dojo.objects.get(id=4), first_name = "Ninja1", last_name = "Jutsu1")
+Ninja.objects.create(dojo = Dojo.objects.get(id=4), first_name = "Ninja2", last_name = "Jutsu2")
+Ninja.objects.create(dojo = Dojo.objects.get(id=4), first_name = "Ninja3", last_name = "Jutsu3")
+
+//6
+Ninja.objects.create(dojo = Dojo.objects.get(id=5), first_name = "Green-Ninja1", last_name = "Green-Jutsu1")
+Ninja.objects.create(dojo = Dojo.objects.get(id=5), first_name = "Green-Ninja2", last_name = "Green-Jutsu2")
+Ninja.objects.create(dojo = Dojo.objects.get(id=5), first_name = "Green-Ninja3", last_name = "Green-Jutsu3")
+
+//7
+Ninja.objects.create(dojo = Dojo.objects.get(id=6), first_name = "Red-Ninja1", last_name = "Red-Jutsu1")
+Ninja.objects.create(dojo = Dojo.objects.get(id=6), first_name = "Red-Ninja2", last_name = "Red-Jutsu2")
+Ninja.objects.create(dojo = Dojo.objects.get(id=6), first_name = "Red-Ninja3", last_name = "Red-Jutsu3")
+
+//8
+Ninja.objects.filter(dojo = Dojo.objects.first())
+
+//9
+Ninja.objects.filter(dojo = Dojo.objects.last())
+
+//10
+lastNinja = Ninja.objects.last()
+lastNinja.dojo
+
+//11
+py manage.py makemkgrations
+pressed <1>
+inputted "old dojo"
+
+//12
+Dojo.objects.create(name = "boxing" , city="Hebron" , state="South Bank" , desc = "Gooood")

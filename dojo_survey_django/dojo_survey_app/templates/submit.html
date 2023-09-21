@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>submition complete!</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+  <body>
+    <div class="container_submit">
+      <h1 id="submit_header">Submitted Info</h1>
+      <br />
+      <p><span class="span">Name: </span> {{username}}</p>
+      <p><span class="span">Dojo Location: </span> {{dojo_location}}</p>
+      <p><span class="span">Favorite Language: </span> {{favorite_language}}</p>
+      <p><span class="span">Comment: </span> {{comment}}</p>
+    </div>
+  </body>
+</html>

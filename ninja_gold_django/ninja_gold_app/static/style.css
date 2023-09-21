@@ -1,0 +1,32 @@
+* {
+    margin: 0 auto;
+    padding: 0 auto;
+    font-family: cursive;
+}
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+.container {
+    display: flex;
+    justify-content: space-evenly;
+}
+.box {
+    padding: 70px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+.btn {
+    text-decoration: none;
+    background-color: tomato;
+    padding: 10px 20px;
+    color: white;
+    border: 2px solid black;
+}
+#quest_log {
+    margin-top: 20px;
+    margin-left: 16%;
+}

@@ -1,0 +1,26 @@
+.container {
+    position:absolute;
+    width:100px;
+    height:100px;
+    left:50%;
+    top:50%;
+    margin-left:-50px;
+    margin-top:-50px;
+}
+#reset_button, #increment_button, #user_add_button  {
+    padding: 10px;
+    border: none;
+    box-shadow: 2px 2px;
+    background-color: tomato;
+    text-align: center;
+    color: whitesmoke;
+    margin: 5px;
+}
+#inputBox {
+    padding: 12px;
+}
+.buttons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}

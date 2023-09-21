@@ -1,0 +1,107 @@
+* {
+  margin: 0 auto;
+  padding: 0 auto;
+  font-family: cursive;
+}
+body {
+  background-color: #0d1117;
+  color: #90a3bd;
+  padding: 20px;
+  border: 1px solid #7d8590;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 15px;
+}
+.UpperScreen,
+.LowerScreen {
+  text-align: center;
+}
+table {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-right: 0px;
+  border-left: 1px solid;
+}
+td {
+  border-top: 1px solid;
+}
+tr:hover {
+  background-color: #135b22;
+  transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
+  transition-property: color, background-color, box-shadow, border-color;
+}
+th,
+td {
+  padding: 5px 30px;
+  border-right: 1px solid;
+}
+th {
+  color: #c1cad6;
+}
+.text {
+  width: 120px;
+}
+.textBoxDiv {
+  display: flex;
+  width: 600px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  line-height: 40px;
+}
+.btn {
+  padding: 10px;
+  color: white;
+  background-color: #135b22;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 4px 4px black;
+  border-radius: 4px;
+  margin-top: 20px;
+  width: 130px;
+  font-size: 15px;
+  transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
+  transition-property: color, background-color, box-shadow, border-color;
+}
+.btn:hover {
+  background-color: #44c25d;
+}
+.anchorR {
+  text-decoration: none;
+  color: rgb(255, 63, 63);
+}
+.anchorR:hover {
+    color: rgb(255, 131, 131);
+    transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
+    transition-property: color, background-color, box-shadow, border-color;
+}
+.anchorG {
+    text-decoration: none;
+    color: #44c25d;
+  }
+.anchorG:hover {
+    color: #72e489;
+    transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
+    transition-property: color, background-color, box-shadow, border-color;
+}
+.textBox {
+  border: 1px solid #7d8590;
+  background-color: #0d1117;
+  border-radius: 4px;
+  color: #90a3bd;
+}
+.textBox:hover {
+  background-color: #10161b;
+  transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
+  transition-property: color, background-color, box-shadow, border-color;
+}
+.networkTable {
+    text-align: center;
+}
+.header {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 950px;
+}

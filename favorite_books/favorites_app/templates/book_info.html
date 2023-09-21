@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{book.title}}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'books/style.css' %}">
+</head>
+
+<body>
+    <div class="navbar">
+        <h1>Welcome, {{user.first_name}}!</h1>
+        <a href="/logout" class="anchor">Logout</a>
+    </div>
+    <div class="container_book_info">
+        <div class="content_left">
+            <h1>{{book.title}}</h1><br>
+            <p>Added by: {{book.uploaded_by.first_name}} {{book.uploaded_by.last_name}}</p><br>
+            <p>Added on: {{book.created_at}}</p><br>
+            <p>Last updated on: {{book.updated_at}}</p><br>
+            <p>Description: {{book.description}}</p><br>
+            <a href="/books" class="anchorG">Go back</a>
+        </div>
+        <div class="content_right">
+            <h1>Users Who Like This Book: </h1><br>
+            <ul>
+                {% for liked_user in book.users_who_like.all %}
+                <li>{{liked_user.first_name}} {{liked_user.last_name}}
+                    {% if user == liked_user %}
+                    <a href="/unfav_book/{{book.id}}" class="anchor">(Unfavorite)</a>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul><br><br>
+            {% if user in book.users_who_like.all %}
+            <p><em>(You liked this book)</em></p>
+            {% else %}
+            <a href="/fav_book/{{book.id}}" class="anchorG">Add to Favorites</a>
+            {% endif %}
+        </div>
+    </div>
+</body>
+
+</html>

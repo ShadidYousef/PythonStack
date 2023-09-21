@@ -1,0 +1,30 @@
+.container {
+    position:absolute;
+    width:150px;
+    height:150px;
+    left:45%;
+    top:40%;
+    margin-left:-50px;
+    margin-top:-50px;
+}
+#reset_button, #addTwo, #user_add_button  {
+    padding: 10px;
+    border: 1px solid black;
+    line-height: 30px;
+    background-color: tomato;
+    text-align: center;
+    color: whitesmoke;
+    text-decoration: none;
+    cursor: pointer;
+}
+#user_add_button {
+    background-color: blue;
+}
+#inputBox {
+    padding: 10px;
+}
+.buttons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
